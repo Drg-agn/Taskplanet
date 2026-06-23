@@ -9,7 +9,22 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+
+const allowedOrigins = [
+  'https://taskplanet-rosy.vercel.app',
+  'http://localhost:5173', // for local dev (Vite default port)
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+}));
+
 app.use(express.json({ limit: '10mb' }));
 
 app.use('/api/auth', authRoutes);
