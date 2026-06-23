@@ -42,9 +42,9 @@ const Signup = () => {
           <Button fullWidth variant="contained" type="submit" sx={{ mt: 2 }}>Sign Up</Button>
         </form>
 
-        <Typography variant="body2" sx={{ mt: 2 }}>
-          Already have an account? <Link href="/login">Login</Link>
-        </Typography>
+       <Typography variant="body2" sx={{ mt: 2 }}>
+  Already have an account? <Link component={RouterLink} to="/login">Login</Link>
+</Typography>
       </Paper>
     </Box>
   );
