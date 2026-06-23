@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Box, Paper, TextField, Button, Typography, Link, Alert } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import api from '../api/axios';
 import { useAuth } from '../context/AuthContext';
 
@@ -42,9 +42,9 @@ const Signup = () => {
           <Button fullWidth variant="contained" type="submit" sx={{ mt: 2 }}>Sign Up</Button>
         </form>
 
-       <Typography variant="body2" sx={{ mt: 2 }}>
-  Already have an account? <Link component={RouterLink} to="/login">Login</Link>
-</Typography>
+        <Typography variant="body2" sx={{ mt: 2 }}>
+          Already have an account? <Link component={RouterLink} to="/login">Login</Link>
+        </Typography>
       </Paper>
     </Box>
   );

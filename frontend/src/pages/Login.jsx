@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Box, Paper, TextField, Button, Typography, Link, Alert } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import api from '../api/axios';
 import { useAuth } from '../context/AuthContext';
-import { Link as RouterLink } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -41,8 +40,8 @@ const Login = () => {
         </form>
 
         <Typography variant="body2" sx={{ mt: 2 }}>
-  Don't have an account? <Link component={RouterLink} to="/signup">Sign up</Link>
-</Typography>
+          Don't have an account? <Link component={RouterLink} to="/signup">Sign up</Link>
+        </Typography>
       </Paper>
     </Box>
   );
